@@ -1,0 +1,75 @@
+{
+  "name": "holst.demo",
+  "version": "1.0.0",
+  "description": "2D graphic library",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env mode=development libraryTarget= webpack --watch",
+    "build:css": "sass-build.bat",
+    "build:web": "cross-env mode=production libraryTarget= webpack --watch",
+    "build:node": "cross-env mode=production libraryTarget=umd webpack",
+    "test": "npx jest --watch"
+  },
+  "repository": {
+    "url": "https://github.com/m1sha/holst"
+  },
+  "keywords": [
+    "2d",
+    "graphic",
+    "animation",
+    "canvas",
+    "vector",
+    "svg"
+  ],
+  "author": "m1hailostertag@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "ts-loader": "^8.0.18",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3",
+    "typescript-loader": "^1.1.3",
+    "webpack": "^5.25.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json",
+      "wasm"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts}",
+      "!**/dist/**",
+      "!**/node_modules/**",
+      "!*.d.ts"
+    ]
+  },
+  "dependencies": {
+    "holst": "file:../holst"
+  }
+}
